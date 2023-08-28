@@ -1,0 +1,31 @@
+.gameDetails__infoList {
+  padding: 20px 0 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+
+  > li {
+    flex: 0 0 20%;
+  }
+}
+
+@media (max-width: 776px) {
+  .gameDetails__infoList {
+    gap: 30px;
+
+    > li {
+      flex: 0 0 45%;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .gameDetails__infoList {
+    gap: 20px;
+
+    > li {
+      flex: 0 0 100%;
+    }
+  }
+}

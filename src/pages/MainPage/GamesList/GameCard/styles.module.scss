@@ -1,0 +1,87 @@
+@import "src/scss/vars.scss";
+
+.gameCard {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 40px;
+  background-color: $lightGrayColor;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 16px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.gameCard__img {
+  max-width: 365px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.gameCard__data {
+  padding: 20px 0;
+}
+
+.gameCard__name {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 5px;
+  font-size: 24px;
+  line-height: 28px;
+  color: $blackColor;
+}
+
+.gameCard__date {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 12px;
+  line-height: 16px;
+  color: $darkGrayColor;
+}
+
+.gameCard__publisher {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+  line-height: 24px;
+  color: $blackColor;
+}
+
+.gameCard__genre {
+  margin: 0;
+  padding: 10px;
+  border-radius: 7px;
+  background-color: $darkGrayColor;
+  color: $whiteColor;
+  font-size: 16px;
+  line-height: 1;
+  width: max-content;
+}
+
+@media (max-width: 776px) {
+  .gameCard {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .gameCard__img {
+    width: 100%;
+    max-width: 600px;
+    max-width: none;
+  }
+
+  .gameCard__data {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,54 @@
+@import "src/scss/vars.scss";
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  background-color: $whiteColor;
+  border-top: 1px solid $darkGrayColor;
+
+  & > button {
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .footer__digitPage {
+    color: $darkGrayColor;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $blackColor;
+    }
+  }
+
+  .footer__curDigitPage {
+    color: $blackColor;
+  }
+
+  .footer__prevBtn,
+  .footer__nextBtn {
+    color: $darkGrayColor;
+
+    transition: color 0.3s ease;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: auto;
+    }
+
+    &:hover:not(:disabled) {
+      color: $blackColor;
+    }
+  }
+}

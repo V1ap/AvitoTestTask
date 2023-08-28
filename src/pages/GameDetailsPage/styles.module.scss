@@ -1,0 +1,86 @@
+@import "src/scss/vars.scss";
+
+.gameDetails {
+  position: relative;
+  max-width: 1600px;
+  padding: 0 50px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.gameDetails__backBtn {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background: none;
+  border: 2px solid $blackColor;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.gameDetails__title {
+  margin: 0;
+  margin-bottom: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gameDetails__data {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.gameDetails__img {
+  flex: 0 0 33%;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.gameDetails__moreDetails {
+  flex: 0 0 66%;
+}
+
+@media (max-width: 1200px) {
+  .gameDetails {
+    padding: 0 25px;
+  }
+
+  .gameDetails__backBtn {
+    top: -30px;
+  }
+
+  .gameDetails__data {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .gameDetails__img {
+    width: 50%;
+    min-width: 450px;
+  }
+}
+
+@media (max-width: 520px) {
+  .gameDetails {
+    padding: 0 15px;
+  }
+
+  .gameDetails__title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .gameDetails__img {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .gameDetails__data {
+    gap: 10px;
+  }
+}
