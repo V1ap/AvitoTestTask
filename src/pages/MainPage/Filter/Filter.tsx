@@ -9,11 +9,9 @@ import {
   setPlatformFilter,
   setSortFilter,
 } from "../../../store/slices/filterSlice";
-import { useNavigate } from "react-router-dom";
 
 const Filter: React.FC = () => {
   const { sort, category, platform } = useAppSelector((state) => state.filter);
-  const navigate = useNavigate();
 
   const dispatch = useAppDispatch();
 
@@ -29,7 +27,6 @@ const Filter: React.FC = () => {
               currentItem={category}
               setCurrentItem={(item) => {
                 dispatch(setCategoryFilter(item));
-                navigate("/games/1");
               }}
             />
           </li>
@@ -40,7 +37,6 @@ const Filter: React.FC = () => {
               currentItem={platform}
               setCurrentItem={(item) => {
                 dispatch(setPlatformFilter(item));
-                navigate("/games/1");
               }}
             />
           </li>

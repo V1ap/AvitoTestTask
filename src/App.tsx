@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useBeforeUnload } from "react-router-dom";
 import MainPage from "./pages/MainPage/MainPage";
 import GameDetailsPage from "./pages/GameDetailsPage/GameDetailsPage";
 import { useEffect } from "react";
@@ -28,11 +28,11 @@ function App() {
     }
   }, [dispatch]);
 
-  window.onbeforeunload = () => {
+  useBeforeUnload(() => {
     localStorage.setItem("platform", platform);
     localStorage.setItem("category", category);
     localStorage.setItem("sort", sort);
-  };
+  });
 
   return (
     <Routes>

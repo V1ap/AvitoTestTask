@@ -11,6 +11,7 @@ import getSortName from "../utils/getSortName";
 
 const useDataGames = () => {
   const { category, sort, platform } = useAppSelector((state) => state.filter);
+  const { isLoading } = useAppSelector((state) => state.games);
   const dispatch = useAppDispatch();
   const controller = new AbortController();
   let errorCouter = 0;
@@ -53,7 +54,10 @@ const useDataGames = () => {
     fetchData();
 
     return () => {
-      controller.abort();
+      if (isLoading) {
+        // без этого условия иногда вылазила ошибка canceled
+        controller.abort();
+      }
     };
   }, [category, sort, platform, dispatch]);
 };
